@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <header>
+        <li>
+          <%= link_to "IT用語新規登録", new_it_word_path %>
+        </li>
+        <li>
+          <%= link_to "IT用語一覧", it_words_index_path %>
+        </li>
+        <li>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+      </header>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
