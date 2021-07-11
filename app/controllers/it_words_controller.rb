@@ -21,6 +21,9 @@ class ItWordsController < ApplicationController
   end
 
   def destroy
+    it_word = ItWord.find(params[:id])
+    it_word.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   def start
