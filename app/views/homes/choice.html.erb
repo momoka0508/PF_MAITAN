@@ -1,0 +1,25 @@
+<h1>コース選択</h1>
+
+<% if current_user.is_admin? %>
+
+  <h4>通報を確認する</h4>
+
+  <h4>検索する</h4>
+  <%= form_with url: "/search", method: :get, local: true do |f| %>
+    <%= f.text_field :search %>
+    <%= f.submit "検索" %>
+  <% end %>
+
+<% else %>
+
+  <h4>学習モード</h4>
+
+  <h4>復習モード</h4>
+
+  <h4>検索モード</h4>
+  <%= form_with url: "/search", method: :get, local: true do |f| %>
+    <%= f.text_field :search %>
+    <%= f.submit "検索" %>
+  <% end %>
+
+<% end %>

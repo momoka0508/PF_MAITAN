@@ -1,0 +1,12 @@
+<h1>検索結果</h1>
+
+<% if @it_words.present? %>
+  <% @it_words.each do |it_word| %>
+    <%= it_word.word %>
+    <%= it_word.body %>
+  <% end %>
+<% else %>
+  <p>該当するIT用語がありません。</p>
+  <p>お手数ですがIT用語新規登録より登録お願いします。</p>
+<% end %>
+

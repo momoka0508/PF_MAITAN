@@ -10,14 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_072849) do
+ActiveRecord::Schema.define(version: 2021_07_11_063112) do
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "it_word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dangers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "it_word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "it_words", force: :cascade do |t|
     t.integer "user_id"
     t.string "word"
-    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "body"
   end
 
   create_table "users", force: :cascade do |t|
