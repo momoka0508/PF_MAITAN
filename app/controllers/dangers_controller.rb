@@ -15,6 +15,7 @@ class DangersController < ApplicationController
   end
 
   def index
+    @dangers = Danger.where(user_id: current_user.id)
   end
 
 end

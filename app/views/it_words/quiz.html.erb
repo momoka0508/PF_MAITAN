@@ -1,0 +1,9 @@
+<% @random.each do |it_word| %>
+  <h1>
+    <%= it_word.word %>
+  </h1>
+  <%= form_with url: it_word_path(it_word), method: :get do |f| %>
+    <% f.hidden_field :value => it_word.id %>
+    <%= f.submit "意味を確認する" %>
+  <% end %>
+<% end %>

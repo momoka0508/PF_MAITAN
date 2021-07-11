@@ -1,0 +1,14 @@
+<h1>ブックマーク一覧</h1>
+
+<% @bookmarks.each do |bookmark| %>
+  <%= bookmark.it_word.word %>
+  <%= bookmark.it_word.body %>
+
+  <!--bookmark機能-->
+  <% if bookmark.it_word.bookmarked_by?(current_user) %>
+    <p>
+      <%= link_to "♥", it_word_bookmark_path(bookmark.it_word, bookmark), method: :delete %>
+    </p>
+  <% end %>
+
+<% end %>

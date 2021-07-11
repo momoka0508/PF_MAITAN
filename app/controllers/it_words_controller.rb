@@ -30,9 +30,12 @@ class ItWordsController < ApplicationController
   end
 
   def quiz
+    # mysql下では"RADOM()"要変更！
+    @random = ItWord.order("RANDOM()").limit(1)
   end
 
   def show
+    @it_word = ItWord.find(params[:id])
   end
 
   def finish
