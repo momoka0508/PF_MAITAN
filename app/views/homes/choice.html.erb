@@ -10,6 +10,9 @@
     <%= f.submit "検索" %>
   <% end %>
 
+  <h4>新着IT用語</h4>
+  <%= @it_words %>
+
 <% else %>
 
   <h4><%= link_to "学習モード", start_it_words_path %></h4>
@@ -21,5 +24,8 @@
     <%= f.text_field :search %>
     <%= f.submit "検索" %>
   <% end %>
+
+  <h4>新着IT用語</h4>
+  <%= @it_words %>
 
 <% end %>
