@@ -30,8 +30,7 @@ class ItWordsController < ApplicationController
   end
 
   def quiz
-    # mysql下では"RADOM()"要変更！
-    @random = ItWord.order("RANDOM()").limit(1)
+    @random = ItWord.offset(rand(ItWord.count)).first
   end
 
   def show
