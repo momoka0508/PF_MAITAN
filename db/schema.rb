@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_063112) do
+ActiveRecord::Schema.define(version: 2021_07_13_040657) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id"
@@ -29,9 +29,17 @@ ActiveRecord::Schema.define(version: 2021_07_11_063112) do
   create_table "it_words", force: :cascade do |t|
     t.integer "user_id"
     t.string "word"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "body"
+  end
+
+  create_table "study_counts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_study", default: false
   end
 
   create_table "users", force: :cascade do |t|

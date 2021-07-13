@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "homes/choice"
   devise_for :users
   get "/search" => "search#search"
+  resource :study_counts, only:[:create]
 
   scope module: :public do
     get "it_words/index"
