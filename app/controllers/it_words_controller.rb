@@ -31,21 +31,19 @@ class ItWordsController < ApplicationController
 
   def quiz
     @random = ItWord.offset(rand(ItWord.count)).first
-    
-    # study_countにデータがあるかどうか確認した上、カウントしていく
-    if params[:count] == nil
-      @study_count = current_user.study_counts.create
-    else
-      @study_count = current_user.study_counts.last
-    end
   end
 
   def show
     @it_word = ItWord.find(params[:id])
+
+    @study_count = StudyCount.new
+    current_user.id = @study_count.user_id
+    @study_count.is_study = true
+    @study_count.save
   end
 
   def finish
-    @study_count = current_user.study_counts.count
+    @study_count = StudyCount.find(params[:user_id][:count])
   end
 
 private

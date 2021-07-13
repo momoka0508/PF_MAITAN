@@ -27,4 +27,6 @@
 
 
 <%= link_to "次の用語", quiz_it_words_path %>
-<%= link_to "学習終了", finish_it_words_path %>
+<%= link_to "学習終了", study_counts_path, method: :post %>
+
+<!--count: [@study_count.is_study].count(true) %>-->

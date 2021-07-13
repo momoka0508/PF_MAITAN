@@ -1,4 +1,4 @@
 <h1>
   <%= @random.word %>
 </h1>
-<%= link_to "意味を確認する", study_counts_path(params: {count: (@study_count.count.to_i + 1), id:@random.id}), method: :post %>
+<%= link_to "意味を確認する", it_word_path(@random.id) %>
