@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get "/search" => "search#search"
   resource :study_counts, only:[:create]
+  get "/dangers" => "dangers#index"
 
   scope module: :public do
     get "it_words/index"
@@ -27,7 +28,6 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :edit, :update, :destroy, :show] do
     member do
       get "/bookmarks" => "bookmarks#index"
-      get "/dangers" => "dangers#index"
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

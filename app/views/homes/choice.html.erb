@@ -2,7 +2,9 @@
 
 <% if current_user.is_admin? %>
 
-  <h4><%= link_to "通報を確認する", dangers_user_path(current_user) %></h4>
+  <h4><%= link_to "通報を確認する", dangers_path %></h4>
+
+  <h4><%= link_to "会員一覧", users_path %></h4>
 
   <h4>検索する</h4>
   <%= form_with url: "/search", method: :get, local: true do |f| %>

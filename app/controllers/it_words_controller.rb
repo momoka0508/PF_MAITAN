@@ -35,15 +35,11 @@ class ItWordsController < ApplicationController
 
   def show
     @it_word = ItWord.find(params[:id])
-
-    @study_count = StudyCount.new
-    current_user.id = @study_count.user_id
-    @study_count.is_study = true
-    @study_count.save
   end
 
   def finish
-    @study_count = StudyCount.find(params[:user_id][:count])
+    @study_count = current_user.study_counts.where(is_study: true).count
+    StudyCount.destroy_all
   end
 
 private
