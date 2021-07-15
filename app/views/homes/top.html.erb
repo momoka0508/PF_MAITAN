@@ -1,6 +1,26 @@
-<li>
-  <%= link_to "新規登録", new_user_registration_path  %>
-</li>
-<li>
-  <%= link_to "ログインする", new_user_session_path  %>
-</li>
+<main class = "mx-auto">
+
+  <div class = "person mx-auto col-7" >
+    <%= image_tag "study_chienetsu_girl.gif", :size => "100x100" %>
+    <p>IT用語が分からなくて勉強が捗らない</p>
+  </div>
+
+  <div class = "person mx-auto col-7" >
+    <%= image_tag "kaiwa_hairenai_businessman.gif", :size => "100x100" %>
+    <p>IT用語が分からなくて会話についていけない</p>
+  </div>
+
+  <div class = "information mx-auto">
+    <p>
+      そんなあなたは、IT用語で迷子になっているかも。</br>
+      IT用語を学習しましょう。
+    </p>
+    <button type="button" class="btn btn-outline-secondary">
+      <%= link_to "新規登録", new_user_registration_path  %>
+    </button>
+    <button type="button" class="btn btn-outline-secondary">
+      <%= link_to "ログインする", new_user_session_path  %>
+    </button>
+  </div>
+
+</main>
