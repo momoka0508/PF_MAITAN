@@ -1,14 +1,23 @@
-<h1>ブックマーク一覧</h1>
-
-<% @bookmarks.each do |bookmark| %>
-  <%= bookmark.it_word.word %>
-  <%= bookmark.it_word.body %>
-
-  <!--bookmark機能-->
-  <% if bookmark.it_word.bookmarked_by?(current_user) %>
-    <p>
-      <%= link_to "♥", it_word_bookmark_path(bookmark.it_word, bookmark), method: :delete %>
-    </p>
-  <% end %>
-
-<% end %>
+<div class = "container mt-5">
+  <h1 class = "mx-auto">【ブックマーク一覧】</h1>
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+        <th>IT用語</th>
+        <th>意味</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookmarks.each do |bookmark| %>
+        <tr>
+          <td><%= bookmark.it_word.word %></td>
+          <td><%= bookmark.it_word.body %></td>
+          <% if bookmark.it_word.bookmarked_by?(current_user) %>
+            <td><%= link_to "♥", it_word_bookmark_path(bookmark.it_word, bookmark), method: :delete %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

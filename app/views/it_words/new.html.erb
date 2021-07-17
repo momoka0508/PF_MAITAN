@@ -1,12 +1,18 @@
-<h1>IT用語登録</h1>
+<div class = "container">
+  <main class = "mt-5 mx-auto pt-5">
+    <div class ="col">
+      <h1>【IT用語登録】</h1>
+    </div>
 
-<div class = "new-word">
-  <%= form_with model: @it_word, local:true do |f| %>
-    <h4>IT用語</h4>
-    <%= f.text_field :word %>
-    <h4>意味</h4>
-    <%= f.text_area :body %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit "IT用語登録する" %>
-  <% end %>
+    <div class = "new-word">
+      <%= form_with model: @it_word, local:true do |f| %>
+        <h4>IT用語</h4>
+        <%= f.text_field :word %>
+        <h4>意味</h4>
+        <%= f.text_area :body %></br>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.submit "IT用語登録する" %>
+      <% end %>
+    </div>
+  </main>
 </div>

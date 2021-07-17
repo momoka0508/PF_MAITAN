@@ -1,8 +1,0 @@
-<h1>IT用語一覧</h1>
-
-<% @it_words.each do |it_word| %>
-  <%= it_word.word %>
-  <%= it_word.body %>
-  <%= link_to "編集する", edit_it_word_path(it_word) %>
-  <%= link_to "削除する", it_word_path(it_word), method: :delete %>
-<% end %>

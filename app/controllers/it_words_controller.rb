@@ -7,7 +7,7 @@ class ItWordsController < ApplicationController
   def create
     it_word = ItWord.new(it_word_params)
     it_word.save
-    redirect_to it_words_index_path
+    redirect_to it_words_path
   end
 
   def edit
@@ -40,6 +40,10 @@ class ItWordsController < ApplicationController
   def finish
     @study_count = current_user.study_counts.where(is_study: true).count
     StudyCount.destroy_all
+  end
+
+  def index
+    @it_words = ItWord.all
   end
 
 private

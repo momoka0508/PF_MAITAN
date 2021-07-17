@@ -10,23 +10,42 @@
   </head>
 
   <body>
+    <!--ヘッダーレイアウト-->
     <% if user_signed_in? %>
       <header>
-        <li>
-          <%= link_to "ロゴ", homes_choice_path %>
-        </li>
-        <li>
-          <%= link_to "マイページ", user_path(current_user) %>
-        </li>
-        <li>
-          <%= link_to "IT用語新規登録", new_it_word_path %>
-        </li>
-        <li>
-          <%= link_to "IT用語一覧", it_words_index_path %>
-        </li>
-        <li>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
+        <div class="container">
+          <nav class="navbar navbar-expand-lg" style="background-color: white;" >
+            <a href="/homes/choice" class="rogo"><%= image_tag "logo.png", :size => "120x120" %></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <button class="btn btn-light" type="button">
+                    <%= link_to "IT用語新規登録", new_it_word_path %>
+                  </button>
+                </li>
+                <li class="nav-item active">
+                  <button class="btn btn-light" type="button">
+                    <%= link_to "IT用語一覧", it_words_path %>
+                  </button>
+                </li>
+                <li class="nav-item active">
+                  <button class="btn btn-light" type="button">
+                    <%= link_to "マイページ", user_path(current_user) %>
+                  </button>
+                </li>
+                <li class="nav-item active">
+                  <button class="btn btn-light" type="button">
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </header>
     <% end %>
 

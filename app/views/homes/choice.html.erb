@@ -1,33 +1,47 @@
-<h1>コース選択</h1>
+<div class = "container">
+  <main class = "mx-auto mt-5 py-5">
+    <% if current_user.is_admin? %>
 
-<% if current_user.is_admin? %>
+      <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+        <%= link_to "通報を確認する", dangers_path %>
+      </button>
 
-  <h4><%= link_to "通報を確認する", dangers_path %></h4>
+      <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+        <%= link_to "会員一覧", users_path %>
+      </button>
 
-  <h4><%= link_to "会員一覧", users_path %></h4>
+      <div class = "search mb-5">
+        <h4>検索する</h4>
+        <%= form_with url: "/search", method: :get, local: true do |f| %>
+          <%= f.text_field :search %>
+          <%= f.submit "検索" %>
+        <% end %>
+      </div>
 
-  <h4>検索する</h4>
-  <%= form_with url: "/search", method: :get, local: true do |f| %>
-    <%= f.text_field :search %>
-    <%= f.submit "検索" %>
-  <% end %>
+      <h4>新着IT用語</h4>
+      <%= @it_words %>
 
-  <h4>新着IT用語</h4>
-  <%= @it_words %>
+    <% else %>
 
-<% else %>
+      <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+        <%= link_to "学習モード", start_it_words_path %>
+      </button>
 
-  <h4><%= link_to "学習モード", start_it_words_path %></h4>
+      <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+        <%= link_to "復習モード", bookmarks_user_path(current_user) %>
+      </button>
 
-  <h4><%= link_to "復習モード", bookmarks_user_path(current_user) %></h4>
+      <div class = "search mb-5">
+        <h4>検索モード</h4>
+        <%= form_with url: "/search", method: :get, local: true do |f| %>
+          <%= f.text_field :search %>
+          <%= f.submit "検索" %>
+        <% end %>
+      </div>
 
-  <h4>検索モード</h4>
-  <%= form_with url: "/search", method: :get, local: true do |f| %>
-    <%= f.text_field :search %>
-    <%= f.submit "検索" %>
-  <% end %>
+      <h4>新着IT用語</h4>
+      <%= @it_words %>
 
-  <h4>新着IT用語</h4>
-  <%= @it_words %>
-
-<% end %>
+    <% end %>
+  </main>
+</div>

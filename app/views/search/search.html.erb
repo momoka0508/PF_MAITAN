@@ -1,12 +1,19 @@
-<h1>検索結果</h1>
+<div class = "container">
+  <main class = "mt-5 pt-1">
+    <div class ="row my-5">
+      <div class ="col">
+        <h1>【検索結果】</h1>
+      </div>
+    </div>
 
-<% if @it_words.present? %>
-  <% @it_words.each do |it_word| %>
-    <%= it_word.word %>
-    <%= it_word.body %>
-  <% end %>
-<% else %>
-  <p>該当するIT用語がありません。</p>
-  <p>お手数ですがIT用語新規登録より登録お願いします。</p>
-<% end %>
-
+    <div class = "mx-auto">
+      <% if @it_words.present? %>
+        <% @it_words.each do |it_word| %>
+          <h3><%= it_word.word %></h3>
+          <h3><%= it_word.body %></h3>
+        <% end %>
+      <% else %>
+        <h3>該当するIT用語がありません。</h3>
+        <h3>お手数ですがIT用語新規登録より登録お願いします。</h3>
+      <% end %>
+    </div>

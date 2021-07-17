@@ -1,0 +1,59 @@
+<div class = "container mt-5">
+  <h1 class = "mx-auto">【IT用語一覧】</h1>
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+        <th>IT用語</th>
+        <th>意味</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @it_words.each do |it_word| %>
+        <tr>
+          <td><%= it_word.word %></td>
+          <td><%= it_word.body %></td>
+          <% if current_user.is_admin? %>
+            <td>
+              <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+                <%= link_to "編集する", edit_it_word_path(it_word) %>
+              </button>
+            </td>
+            <td>
+              <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+                <%= link_to "削除する", it_word_path(it_word), method: :delete %>
+              </button>
+            </td>
+          <% elsif current_user == it_word.user.id %>
+            <td>
+              <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+                <%= link_to "編集する", edit_it_word_path(it_word) %>
+              </button>
+            </td>
+            <td>
+              <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+                <%= link_to "削除する", it_word_path(it_word), method: :delete %>
+              </button>
+            </td>
+          <% else %>
+            <!--ブックマーク-->
+            <% if it_word.bookmarked_by?(current_user) %>
+              <td><%= link_to "♥", it_word_bookmark_path(it_word, it_word.bookmarks), method: :delete %></td>
+            <% else %>
+              <td><%= link_to "♡", it_word_bookmarks_path(it_word), method: :post %></td>
+            <% end %>
+            <!--通報-->
+            <% if it_word.dangered_by?(current_user) %>
+              <td><%= link_to "通報を取り消す", it_word_danger_path(it_word, it_word.dangers), method: :delete %></td>
+            <% else %>
+              <td><%= link_to "通報する", it_word_dangers_path(it_word), method: :post %></td>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

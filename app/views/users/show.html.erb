@@ -1,13 +1,26 @@
-<h1>会員詳細</h1>
+<div class = "container mt-5">
+  <h1 class = "mx-auto">【会員詳細】</h1>
 
-<h4>名前</h4>
-<%= @user.name %>
-<h4>メールアドレス</h4>
-<%= @user.email %>
-
-<% if current_user.is_admin? %>
-  <%= link_to "強制退会する", user_path(@user), method: :delete %>
-<% elsif current_user = @user %>
-  <%= link_to "編集する", edit_user_path(@user) %>
-  <%= link_to "退会する", user_path(@user), method: :delete %>
-<% end %>
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>メールアドレス</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @user.name %></td>
+        <td><%= @user.email %></td>
+        <% if current_user.is_admin? %>
+          <td><%= link_to "強制退会する", user_path(@user), method: :delete %></td>
+        <% elsif current_user = @user %>
+          <td><%= link_to "編集する", edit_user_path(@user) %></td>
+          <td><%= link_to "退会する", user_path(@user), method: :delete %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>

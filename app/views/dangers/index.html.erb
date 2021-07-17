@@ -1,10 +1,25 @@
-<h1>通報一覧</h1>
-
-<% @dangers.each do |danger| %>
-  <p>投稿者</p>
-  <%= link_to danger.user.name, user_path(danger.user) %>
-  <%= danger.it_word.word %>
-  <%= danger.it_word.body %>
-  <%= link_to "編集する", edit_it_word_path(danger.it_word) %>
-  <%= link_to "削除する", it_word_path(danger.it_word), method: :delete %>
-<% end %>
+<div class = "container mt-5">
+  <h1 class = "mx-auto">【通報一覧】</h1>
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+        <th>投稿者</th>
+        <th>IT用語</th>
+        <th>意味</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @dangers.each do |danger| %>
+        <tr>
+          <td><%= link_to danger.user.name, user_path(danger.user) %></td>
+          <td><%= danger.it_word.word %></td>
+          <td><%= danger.it_word.body %></td>
+          <td><%= link_to "編集する", edit_it_word_path(danger.it_word) %></td>
+          <td><%= link_to "削除する", it_word_path(danger.it_word), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

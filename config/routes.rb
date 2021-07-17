@@ -10,12 +10,8 @@ Rails.application.routes.draw do
     get "it_words/index"
   end
 
-  namespace :admin do
-    get "it_words/index"
-  end
-
   # collection以降、学習機能実装時、URL要確認
-  resources :it_words, except:[:index] do
+  resources :it_words do
     collection do
       get "start"
       get "finish"

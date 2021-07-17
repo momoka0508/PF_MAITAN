@@ -1,32 +1,40 @@
-<h1>IT用語答え</h1>
+<div class = "container mt-5">
+  <h1 class = "mx-auto">【IT用語答え】</h1>
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+        <th>IT用語</th>
+        <th>意味</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @it_word.word %></td>
+        <td><%= @it_word.body %></td>
+        <!--bookmark機能-->
+        <% if @it_word.bookmarked_by?(current_user) %>
+          <td><%= link_to "♥", it_word_bookmark_path(@it_word, @it_word.bookmarks), method: :delete %></td>
+        <% else %>
+          <td><%= link_to "♡", it_word_bookmarks_path(@it_word), method: :post %></td>
+        <% end %>
+        <!--通報機能-->
+        <% if @it_word.dangered_by?(current_user) %>
+          <td><%= link_to "通報を取り消す", it_word_danger_path(@it_word, @it_word.dangers), method: :delete %></td>
+        <% else %>
+          <td><%= link_to "通報する", it_word_dangers_path(@it_word), method: :post %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
 
-<%= @it_word.word %>
-<%= @it_word.body %>
-
-<!--bookmark機能-->
-<% if @it_word.bookmarked_by?(current_user) %>
-  <p>
-    <%= link_to "♥", it_word_bookmark_path(@it_word, @it_word.bookmarks), method: :delete %>
-  </p>
-<% else %>
-  <p>
-    <%= link_to "♡", it_word_bookmarks_path(@it_word), method: :post %>
-  </p>
-<% end %>
-
-<!--通報機能-->
-<% if @it_word.dangered_by?(current_user) %>
-  <p>
-    <%= link_to "通報を取り消す", it_word_danger_path(@it_word, @it_word.dangers), method: :delete %>
-  </p>
-<% else %>
-  <p>
-    <%= link_to "通報する", it_word_dangers_path(@it_word), method: :post %>
-  </p>
-<% end %>
-
-
-<%= link_to "次の用語", quiz_it_words_path %>
-<%= link_to "学習終了", finish_it_words_path %>
-
-<!--count: [@study_count.is_study].count(true) %>-->
+  <div class = "text-right">
+    <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+      <%= link_to "次の用語", quiz_it_words_path %>
+    </button>
+    <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+      <%= link_to "学習終了", finish_it_words_path %>
+    </button>
+  </div>
+</div>
