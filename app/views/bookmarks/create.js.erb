@@ -1,1 +1,2 @@
-$('#favorite_<%= it_word.id %>').html("<%= j(render 'bookmark', it_word: it_word) %>");
+<!--ここでの@it_wordはbookmarkコントローラで渡された変数-->
+$("#bookmark_<%= @it_word.id %>").html("<%= j(render 'bookmark', it_word: @it_word) %>");

@@ -40,7 +40,9 @@
             </td>
           <% else %>
             <!--ブックマーク-->
-            <%= render "bookmarks/bookmark", it_word: it_word %>
+            <td id = "bookmark_<%= it_word.id %>" >
+              <%= render "bookmarks/bookmark", it_word: it_word %>
+            </td>
             <!--通報-->
             <% if it_word.dangered_by?(current_user) %>
               <td><%= link_to "通報を取り消す", it_word_danger_path(it_word, it_word.dangers), method: :delete %></td>

@@ -14,7 +14,9 @@
           <td><%= bookmark.it_word.word %></td>
           <td><%= bookmark.it_word.body %></td>
           <!--ブックマーク-->
-          <%= render "bookmarks/bookmark", it_word: bookmark.it_word %>
+          <td id = "bookmark_<%= bookmark.it_word.id %>" >
+            <%= render "bookmarks/bookmark", it_word: bookmark.it_word %>
+          </td>
         </tr>
       <% end %>
     </tbody>
