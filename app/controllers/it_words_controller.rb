@@ -17,7 +17,7 @@ class ItWordsController < ApplicationController
   def update
     it_word = ItWord.find(params[:id])
     it_word.update(it_word_params)
-    redirect_to it_words_index_path
+    redirect_to it_words_path
   end
 
   def destroy
