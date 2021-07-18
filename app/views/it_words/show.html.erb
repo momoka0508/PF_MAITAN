@@ -14,11 +14,7 @@
         <td><%= @it_word.word %></td>
         <td><%= @it_word.body %></td>
         <!--bookmark機能-->
-        <% if @it_word.bookmarked_by?(current_user) %>
-          <td><%= link_to "♥", it_word_bookmark_path(@it_word, @it_word.bookmarks), method: :delete %></td>
-        <% else %>
-          <td><%= link_to "♡", it_word_bookmarks_path(@it_word), method: :post %></td>
-        <% end %>
+        <%= render "bookmarks/bookmark", it_word: @it_word %>
         <!--通報機能-->
         <% if @it_word.dangered_by?(current_user) %>
           <td><%= link_to "通報を取り消す", it_word_danger_path(@it_word, @it_word.dangers), method: :delete %></td>

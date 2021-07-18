@@ -13,9 +13,8 @@
         <tr>
           <td><%= bookmark.it_word.word %></td>
           <td><%= bookmark.it_word.body %></td>
-          <% if bookmark.it_word.bookmarked_by?(current_user) %>
-            <td><%= link_to "♥", it_word_bookmark_path(bookmark.it_word, bookmark), method: :delete %></td>
-          <% end %>
+          <!--ブックマーク-->
+          <%= render "bookmarks/bookmark", it_word: bookmark.it_word %>
         </tr>
       <% end %>
     </tbody>
