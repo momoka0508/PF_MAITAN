@@ -18,25 +18,17 @@
           <td><%= it_word.body %></td>
           <% if current_user.is_admin? %>
             <td>
-              <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
-                <%= link_to "編集する", edit_it_word_path(it_word) %>
-              </button>
+              <%= link_to "編集する", edit_it_word_path(it_word) %>
             </td>
             <td>
-              <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
-                <%= link_to "削除する", it_word_path(it_word), method: :delete %>
-              </button>
+              <%= link_to "削除する", it_word_path(it_word), method: :delete %>
             </td>
-          <% elsif current_user == it_word.user.id %>
+          <% elsif current_user == it_word.user %>
             <td>
-              <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
-                <%= link_to "編集する", edit_it_word_path(it_word) %>
-              </button>
+              <%= link_to "編集する", edit_it_word_path(it_word) %>
             </td>
             <td>
-              <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
-                <%= link_to "削除する", it_word_path(it_word), method: :delete %>
-              </button>
+              <%= link_to "削除する", it_word_path(it_word), method: :delete %>
             </td>
           <% else %>
             <!--ブックマーク-->
