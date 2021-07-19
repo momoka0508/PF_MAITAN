@@ -3,6 +3,7 @@ class ItWord < ApplicationRecord
 
   has_many :bookmarks, dependent: :destroy
   has_many :dangers, dependent: :destroy
+  has_many :category, dependent: :destroy
 
   # 引数で渡されたユーザidがDangersテーブル内に存在（exists?）するかどうかを調べる
   def dangered_by?(user)

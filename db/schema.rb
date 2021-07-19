@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_14_043852) do
+ActiveRecord::Schema.define(version: 2021_07_19_082944) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "it_word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_07_14_043852) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
   end
 
   create_table "study_counts", force: :cascade do |t|
