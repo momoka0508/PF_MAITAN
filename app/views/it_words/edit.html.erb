@@ -10,7 +10,7 @@
         <%= f.text_field :word, value: @it_word.word %>
         <h4>意味</h4>
         <%= f.text_area :body, value: @it_word.body %></br>
-        <%= f.collection_select :category_id, value: @it_word.category_id %>
+        <%= f.collection_select(:category_id, @categories, :id, :category) %></br>
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <%= f.submit "IT用語更新する" %>
       <% end %>

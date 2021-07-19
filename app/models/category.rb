@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  belongs_to :it_word
+  belongs_to :it_word, optional: true
 end

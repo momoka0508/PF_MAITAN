@@ -2,6 +2,7 @@ class ItWordsController < ApplicationController
 
   def new
     @it_word = ItWord.new
+    @categories = Category.all
   end
 
   def create
@@ -12,6 +13,7 @@ class ItWordsController < ApplicationController
 
   def edit
     @it_word = ItWord.find(params[:id])
+    @categories = Category.all
   end
 
   def update
