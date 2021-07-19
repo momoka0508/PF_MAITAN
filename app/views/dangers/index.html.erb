@@ -13,7 +13,7 @@
     <tbody>
       <% @dangers.each do |danger| %>
         <tr>
-          <td><%= link_to danger.user.name, user_path(danger.user) %></td>
+          <td><%= link_to danger.it_word.user.name, user_path(danger.it_word.user) %></td>
           <td><%= danger.it_word.word %></td>
           <td><%= danger.it_word.body %></td>
           <td><%= link_to "編集する", edit_it_word_path(danger.it_word) %></td>
