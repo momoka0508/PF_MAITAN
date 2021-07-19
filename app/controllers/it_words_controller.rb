@@ -49,7 +49,7 @@ class ItWordsController < ApplicationController
 private
 
 def it_word_params
-  params.require(:it_word).permit(:user_id, :word, :body, :category)
+  params.require(:it_word).permit(:user_id, :word, :body, :category_id)
 end
 
 end
