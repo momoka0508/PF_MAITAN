@@ -32,7 +32,12 @@ class ItWordsController < ApplicationController
   end
 
   def quiz
-    @random = ItWord.offset(rand(ItWord.count)).first
+    if params[:category] == nil
+      @random = ItWord.offset(rand(ItWord.count)).first
+    else
+      category = Category.find_by(category: params[:category])
+      @random = category.it_words.offset(rand(category.it_words.count)).first
+    end
   end
 
   def show
