@@ -6,10 +6,6 @@ Rails.application.routes.draw do
   resource :study_counts, only:[:create]
   get "/dangers" => "dangers#index"
 
-  scope module: :public do
-    get "it_words/index"
-  end
-
   # collection以降、学習機能実装時、URL要確認
   resources :it_words do
     collection do
