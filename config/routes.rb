@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/search" => "search#search"
   resource :study_counts, only:[:create]
   get "/dangers" => "dangers#index"
+  get "/category" => "categories#category"
 
   # collection以降、学習機能実装時、URL要確認
   resources :it_words do

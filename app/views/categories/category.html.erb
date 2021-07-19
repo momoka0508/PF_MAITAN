@@ -1,19 +1,5 @@
 <div class = "container mt-5">
-  <h1>【IT用語一覧】</h1>
-
-  <h3>↓　カテゴリー別に確認する　↓</h3>
-  <button type = "button" class = "btn btn-outline-secondary btn-lg">
-    <%= link_to "就活系IT用語", category_path(category: "就活系") %>
-  </button>
-
-  <button type = "button" class = "btn btn-outline-secondary btn-lg">
-    <%= link_to "プログラミング系IT用語", category_path(category: "プログラミング系") %>
-  </button>
-
-  <button type = "button" class = "btn btn-outline-secondary btn-lg">
-    <%= link_to "先進技術系IT用語", category_path(category: "先進技術系") %>
-  </button>
-
+  <h1>【<%= @category.category %>のIT用語一覧】</h1>
   <table class="table table-hover table-inverse">
     <thead>
       <tr>
@@ -24,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @it_words.each do |it_word| %>
+      <% @category.it_words.each do |it_word| %>
         <tr>
           <td><%= it_word.word %></td>
           <td><%= it_word.body %></td>
@@ -55,5 +41,3 @@
         </tr>
       <% end %>
     </tbody>
-  </table>
-</div>

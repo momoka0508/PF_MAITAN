@@ -1,4 +1,3 @@
 class Category < ApplicationRecord
-  # optional: trueは「belongs_toの外部キーのnilを許可するというもの」
-  belongs_to :it_word, optional: true
+  has_many :it_words, dependent: :destroy
 end
