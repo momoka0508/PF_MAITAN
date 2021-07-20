@@ -7,8 +7,12 @@ class ItWordsController < ApplicationController
 
   def create
     it_word = ItWord.new(it_word_params)
-    it_word.save
-    redirect_to it_words_path
+    if it_word.save
+      redirect_to it_words_path
+    else
+      @categories = Category.all
+      render "new"
+    end
   end
 
   def edit
@@ -32,9 +36,31 @@ class ItWordsController < ApplicationController
   end
 
   def quiz
+    if Rails.cache.read("quiz").nil?
+      random = ItWord.offset(rand(ItWord.count))
+      # 文字列として保存
+      Rails.cache.write("quiz", random.to_json)
+      word = Rails.cache.read("quiz")
+      Rails.cache.write("count", 0)
+      hoge = Rails.cache.read("count")
+    else
+      word = Rails.cache.read("quiz")
+      hoge = Rails.cache.read("count")
+    end
+
+
     # offsetで取得開始位置を指定
     if params[:category] == nil
-      @random = ItWord.offset(rand(ItWord.count)).first
+      # @random = ItWord.offset(rand(ItWord.count))
+      # Rails.cache.write("quiz", @random)
+      # Rails.cache.read("quiz")
+
+      # 再び配列へ
+      word = JSON.parse word
+      @random = word[hoge]
+      puts hoge
+      Rails.cache.write("count", hoge + 1)
+      # @random = ItWord.offset(rand(ItWord.count)).first
     else
       category = Category.find_by(category: params[:category])
       @random = category.it_words.offset(rand(category.it_words.count)).first

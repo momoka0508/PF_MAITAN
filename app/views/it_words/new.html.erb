@@ -4,8 +4,16 @@
       <h1>【IT用語登録】</h1>
     </div>
 
+    <!--エラーメッセージ-->
+    <% if @it_word.errors.any? %>
+      <%= @it_word.errors.count %>件のエラーが発生しました
+      <% @it_word.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+
     <!--入力フォーム-->
-    <%= form_with model: @it_word, local:true do |f| %>
+    <%= form_with model: @it_word, local: true do |f| %>
       <h4>IT用語</h4>
       <%= f.text_field :word %>
       <h4>意味</h4>
