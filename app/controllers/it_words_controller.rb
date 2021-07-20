@@ -32,6 +32,7 @@ class ItWordsController < ApplicationController
   end
 
   def quiz
+    # offsetで取得開始位置を指定
     if params[:category] == nil
       @random = ItWord.offset(rand(ItWord.count)).first
     else
