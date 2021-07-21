@@ -36,10 +36,9 @@ class ItWordsController < ApplicationController
   def quiz
     # キャッシュ定義
     if Rails.cache.read("quiz").nil?
-      # offsetで取得開始位置を指定
-      random = ItWord.offset(rand(ItWord.count))
+      # ランダムにレコード取得
+      random = ItWord.order("RANDOM()")
       # ・"quiz"に定義・"to_json"にて文字列として保存
-      require 'json'
       Rails.cache.write("quiz", random.to_json)
       word = Rails.cache.read("quiz")
       # 配列の先頭を変数に定義する
@@ -50,7 +49,6 @@ class ItWordsController < ApplicationController
       hoge = Rails.cache.read("count")
     end
     # 再び配列へ
-    require 'json'
     word = JSON.parse word
     @random = word[hoge]
     puts hoge
@@ -61,13 +59,13 @@ class ItWordsController < ApplicationController
   def category_quiz
     # キャッシュ定義
     if Rails.cache.read("quiz").nil?
-      # offsetで取得開始位置を指定
+      # ランダムにレコード取得
       @category = Category.find_by(category: params[:category])
-      random = @category.it_words.offset(rand(@category.it_words.count))
+      random = @category.it_words.order("RANDOM()")
       # ・"quiz"に定義・"to_json"にて文字列として保存
-      require 'json'
       Rails.cache.write("quiz", random.to_json)
       word = Rails.cache.read("quiz")
+      # 配列の先頭を変数に定義する
       Rails.cache.write("count", 0)
       hoge = Rails.cache.read("count")
     else
@@ -75,7 +73,6 @@ class ItWordsController < ApplicationController
       hoge = Rails.cache.read("count")
     end
     # 再び配列へ
-    require 'json'
     word = JSON.parse word
     @random = word[hoge]
     puts hoge
