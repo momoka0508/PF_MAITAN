@@ -13,6 +13,10 @@ Rails.application.routes.draw do
       get "start"
       get "finish"
       get "quiz"
+      get "category_quiz"
+    end
+    member do
+      get "category_show"
     end
     resources :bookmarks, only:[:create, :destroy]
     resources :dangers, only:[:create, :destroy]
