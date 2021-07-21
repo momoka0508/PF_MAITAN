@@ -42,6 +42,7 @@ class ItWordsController < ApplicationController
       require 'json'
       Rails.cache.write("quiz", random.to_json)
       word = Rails.cache.read("quiz")
+      # 配列の先頭を変数に定義する
       Rails.cache.write("count", 0)
       hoge = Rails.cache.read("count")
     else
