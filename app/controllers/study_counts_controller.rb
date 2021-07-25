@@ -4,7 +4,7 @@ class StudyCountsController < ApplicationController
     study_count.is_study = true
     study_count.save
 
-    if params[:category].nil?
+    if @category.nil?
       @it_word = ItWord.find(params[:id])
       render template: "it_words/show"
     else

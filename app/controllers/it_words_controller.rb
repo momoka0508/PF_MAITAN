@@ -57,10 +57,10 @@ class ItWordsController < ApplicationController
 
   # カテゴリー有りver
   def category_quiz
+    @category = Category.find_by(category: params[:category])
     # キャッシュ定義
     if Rails.cache.read("quiz").nil?
       # ランダムにレコード取得
-      @category = Category.find_by(category: params[:category])
       random = @category.it_words.order("RANDOM()")
       # ・"quiz"に定義・"to_json"にて文字列として保存
       Rails.cache.write("quiz", random.to_json)
@@ -73,11 +73,17 @@ class ItWordsController < ApplicationController
       hoge = Rails.cache.read("count")
     end
     # 再び配列へ
+    # wordを置き換えてるので下記変数名である必要がある
     word = JSON.parse word
     @random = word[hoge]
     puts hoge
     Rails.cache.write("count", hoge+1)
   end
+
+# if word.nil?
+#   Rails.cache.clear
+#   redirect_to finish_it_words_path
+# end
 
   # カテゴリー無しver
   def show
@@ -92,6 +98,8 @@ class ItWordsController < ApplicationController
   def finish
     @study_count = current_user.study_counts.where(is_study: true).count
     StudyCount.destroy_all
+    # キャッシュをクリアする
+    Rails.cache.clear
   end
 
   def index
