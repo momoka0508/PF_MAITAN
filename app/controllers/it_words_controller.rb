@@ -43,7 +43,7 @@ class ItWordsController < ApplicationController
     # キャッシュ定義
     if Rails.cache.read("quiz").nil?
       # ランダムにレコード取得
-      random = ItWord.order("RANDOM()")
+      random = ItWord.order("RAND()")
       # ・"quiz"に定義・"to_json"にて文字列として保存
       Rails.cache.write("quiz", random.to_json)
       word = Rails.cache.read("quiz")
@@ -67,7 +67,7 @@ class ItWordsController < ApplicationController
     # キャッシュ定義
     if Rails.cache.read("quiz").nil?
       # ランダムにレコード取得
-      random = @category.it_words.order("RANDOM()")
+      random = @category.it_words.order("RAND()")
       # ・"quiz"に定義・"to_json"にて文字列として保存
       Rails.cache.write("quiz", random.to_json)
       word = Rails.cache.read("quiz")
