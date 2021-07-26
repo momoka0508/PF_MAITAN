@@ -78,12 +78,6 @@ class ItWordsController < ApplicationController
       word = Rails.cache.read("quiz")
       hoge = Rails.cache.read("count")
     end
-
-    # 配列用語全て使用した後のエラー防止案
-    # if word.size == hoge
-    #   redirect_to finish_it_words
-    # end
-
     # 再び配列へ
     # wordを置き換えてるので下記変数名である必要がある
     word = JSON.parse word
