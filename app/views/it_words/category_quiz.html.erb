@@ -6,7 +6,7 @@
     </h1>
 
     <button type = "button" class = "col-3 btn btn-outline-secondary mb-1">
-      <%= link_to "意味を確認する", study_counts_path(id: @random["id"], category: @category), method: :post %>
+      <%= link_to "意味を確認する", study_counts_path(id: @random["id"], category: @category.category), method: :post %>
     </button>
   </main>
 </div>

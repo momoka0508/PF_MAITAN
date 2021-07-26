@@ -80,11 +80,6 @@ class ItWordsController < ApplicationController
     Rails.cache.write("count", hoge+1)
   end
 
-# if word.nil?
-#   Rails.cache.clear
-#   redirect_to finish_it_words_path
-# end
-
   # カテゴリー無しver
   def show
     @it_word = ItWord.find(params[:id])
@@ -93,6 +88,7 @@ class ItWordsController < ApplicationController
   # カテゴリー有りver
   def category_show
     @it_word = ItWord.find(params[:id])
+    @category = Category.find_by(category: params[:category])
   end
 
   def finish
