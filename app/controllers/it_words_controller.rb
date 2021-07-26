@@ -6,8 +6,9 @@ class ItWordsController < ApplicationController
   end
 
   def create
-    it_word = ItWord.new(it_word_params)
-    if it_word.save
+    # エラーメッセージ表示の為、インスタンス変数
+    @it_word = ItWord.new(it_word_params)
+    if @it_word.save
       redirect_to it_words_path
     else
       @categories = Category.all
@@ -21,9 +22,14 @@ class ItWordsController < ApplicationController
   end
 
   def update
-    it_word = ItWord.find(params[:id])
-    it_word.update(it_word_params)
-    redirect_to it_words_path
+    # エラーメッセージ表示の為、インスタンス変数
+    @it_word = ItWord.find(params[:id])
+    if @it_word.update(it_word_params)
+      redirect_to it_words_path
+    else
+      @categories = Category.all
+      render "edit"
+    end
   end
 
   def destroy
@@ -72,10 +78,17 @@ class ItWordsController < ApplicationController
       word = Rails.cache.read("quiz")
       hoge = Rails.cache.read("count")
     end
+
+    # 配列用語全て使用した後のエラー防止案
+    # if word.size == hoge
+    #   redirect_to finish_it_words
+    # end
+
     # 再び配列へ
     # wordを置き換えてるので下記変数名である必要がある
     word = JSON.parse word
     @random = word[hoge]
+    # 便宜上
     puts hoge
     Rails.cache.write("count", hoge+1)
   end

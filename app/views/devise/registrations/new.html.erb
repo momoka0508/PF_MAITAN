@@ -2,8 +2,16 @@
 
   <h2>Sign up</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_with model: @user, url: user_registration_path, id: "new_user", class: "new_user", local: true do |f| %>
+    <!--エラーメッセージ-->
+    <% if @user.errors.any? %>
+      <div class = "text-danger">
+        <%= @user.errors.count %>件のエラーが発生しました
+        <% @user.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    <% end %>
 
     <div class="field">
       <%= f.label :name %><br />

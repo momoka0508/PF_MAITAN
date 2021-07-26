@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :dangers, dependent: :destroy
   has_many :study_counts, dependent: :destroy
 
+  validates :name, presence: true
+
 end

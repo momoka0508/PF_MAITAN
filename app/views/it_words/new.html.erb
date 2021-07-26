@@ -6,10 +6,12 @@
 
     <!--エラーメッセージ-->
     <% if @it_word.errors.any? %>
-      <%= @it_word.errors.count %>件のエラーが発生しました
-      <% @it_word.errors.full_messages.each do |message| %>
-        <%= message %>
-      <% end %>
+      <div class = "text-danger">
+        <%= @it_word.errors.count %>件のエラーが発生しました
+        <% @it_word.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
     <% end %>
 
     <!--入力フォーム-->

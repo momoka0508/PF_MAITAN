@@ -4,6 +4,16 @@
       <h1>【IT用語編集画面】</h1>
     </div>
 
+    <!--エラーメッセージ-->
+    <% if @it_word.errors.any? %>
+      <div class = "text-danger">
+        <%= @it_word.errors.count %>件のエラーが発生しました
+        <% @it_word.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class = "edit-user">
       <%= form_with model: @it_word, local:true do |f| %>
         <h4>IT用語</h4>
