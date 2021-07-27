@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     # エラーメッセージ表示の為、インスタンス変数
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(user)
+      redirect_to user_path(@user)
     else
       # 元々のデータ渡す必要が無いから、インスタンス変数渡さなくていい
       render "edit"
