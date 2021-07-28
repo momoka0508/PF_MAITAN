@@ -45,7 +45,7 @@ class ItWordsController < ApplicationController
     quiz = JSON.parse(quiz)
     if quiz.blank?
       # ランダムにレコード取得
-      random = ItWord.order("RANDOM()")
+      random = ItWord.order("RAND()")
       # ・"quiz"に定義・"to_json"にて文字列として保存
       Rails.cache.write("quiz", random.to_json)
       word = Rails.cache.read("quiz")
