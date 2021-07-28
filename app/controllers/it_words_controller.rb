@@ -79,7 +79,9 @@ class ItWordsController < ApplicationController
     # wordを置き換えてるので下記変数名である必要がある
     word = JSON.parse word
     @random = word.first
+    # 一度出たit_wordは削除する
     word.delete_if {|w| w['id'] == @random['id'] }
+    # ・"quiz"に定義・"to_json"にて文字列として保存
     Rails.cache.write("quiz", word.to_json)
   end
 
@@ -96,7 +98,7 @@ class ItWordsController < ApplicationController
 
   def finish
     @study_count = current_user.study_counts.where(is_study: true).count
-    StudyCount.destroy_all
+    current_user.study_counts.destroy_all
     # キャッシュをクリアする
     Rails.cache.clear
   end
