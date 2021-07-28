@@ -53,6 +53,7 @@ class ItWordsController < ApplicationController
       word = Rails.cache.read("quiz")
     end
     # 再び配列へ
+    # wordを置き換えてるので下記変数名である必要がある
     word = JSON.parse word
     @random = word.first
     word.delete_if {|w| w['id'] == @random['id'] }
@@ -62,27 +63,24 @@ class ItWordsController < ApplicationController
   # カテゴリー有りver
   def category_quiz
     @category = Category.find_by(category: params[:category])
+    quiz = Rails.cache.read("quiz") || '[]'
+    quiz = JSON.parse(quiz)
     # キャッシュ定義
-    if Rails.cache.read("quiz").nil?
+    if quiz.blank?
       # ランダムにレコード取得
       random = @category.it_words.order("RAND()")
       # ・"quiz"に定義・"to_json"にて文字列として保存
       Rails.cache.write("quiz", random.to_json)
       word = Rails.cache.read("quiz")
-      # 配列の先頭を変数に定義する
-      Rails.cache.write("count", 0)
-      hoge = Rails.cache.read("count")
     else
       word = Rails.cache.read("quiz")
-      hoge = Rails.cache.read("count")
     end
     # 再び配列へ
     # wordを置き換えてるので下記変数名である必要がある
     word = JSON.parse word
-    @random = word[hoge]
-    # 便宜上
-    puts hoge
-    Rails.cache.write("count", hoge+1)
+    @random = word.first
+    word.delete_if {|w| w['id'] == @random['id'] }
+    Rails.cache.write("quiz", word.to_json)
   end
 
   # カテゴリー無しver
