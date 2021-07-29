@@ -17,14 +17,8 @@ IT用語学習ツール
 - IT用語が分からない時に検索できる
 - 登録の無いIT用語を新規登録・編集することができる
 - お気に入り機能で、覚えるまで繰り返し確認できる
-- 自分の学習量を振り返ることができる
-- 他ユーザーの進捗を確認して、モチベ向上も期待できる
 
 ## 設計書
-- ワイヤーフレーム(customer)</br>
-https://drive.google.com/file/d/1jPp054vajDglc8-mj2SNdwVa4V88PaHb/view?usp=sharing
-- ワイヤーフレーム（admin）</br>
-https://drive.google.com/file/d/1fI6yIiNQm5qReNP2iehn-fkfsaCtBxca/view?usp=sharing
 - UIフロー（customer）</br>
 https://drive.google.com/file/d/1FhPDrIlLngnxN9xzKlDzwEYgHWmmJoDp/view?usp=sharing
 - UIフロー（admin）</br>
@@ -45,6 +39,3 @@ https://docs.google.com/spreadsheets/d/1GjMulo1iab1MpxH2551Z4sC5q0FF4iNsvDAxKa3f
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
-
-## 使用素材
-現状未定
