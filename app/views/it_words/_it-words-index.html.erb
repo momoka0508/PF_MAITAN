@@ -1,0 +1,42 @@
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th>IT用語</th>
+      <th>意味</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% it_words.each do |it_word| %>
+      <tr>
+        <td><%= it_word.word %></td>
+        <td><%= it_word.body %></td>
+        <% if current_user.is_admin? %>
+          <td>
+            <%= link_to "編集する", edit_it_word_path(it_word) %>
+          </td>
+          <td>
+            <%= link_to "削除する", it_word_path(it_word), method: :delete %>
+          </td>
+        <% elsif current_user == it_word.user %>
+          <td>
+            <%= link_to "編集する", edit_it_word_path(it_word) %>
+          </td>
+          <td>
+            <%= link_to "削除する", it_word_path(it_word), method: :delete %>
+          </td>
+        <% else %>
+          <!--ブックマーク-->
+          <td id = "bookmark_<%= it_word.id %>" >
+            <%= render "bookmarks/bookmark", it_word: it_word %>
+          </td>
+          <!--通報-->
+          <td id = "danger_<%= it_word.id %>" >
+            <%= render "dangers/danger", it_word: it_word %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
