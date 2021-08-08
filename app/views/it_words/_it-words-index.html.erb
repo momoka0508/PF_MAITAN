@@ -15,17 +15,17 @@
         <td><%= it_word.body %></td>
         <% if current_user.is_admin? %>
           <td>
-            <%= link_to "編集する", edit_it_word_path(it_word) %>
+            <%= link_to "", edit_it_word_path(it_word), class: "fas fa-cog" %>
           </td>
           <td>
-            <%= link_to "削除する", it_word_path(it_word), method: :delete %>
+            <%= link_to "", it_word_path(it_word), method: :delete, class: "fas fa-ban" %>
           </td>
         <% elsif current_user == it_word.user %>
           <td>
-            <%= link_to "編集する", edit_it_word_path(it_word) %>
+            <%= link_to "", edit_it_word_path(it_word), class: "fas fa-cog" %>
           </td>
           <td>
-            <%= link_to "削除する", it_word_path(it_word), method: :delete %>
+            <%= link_to "", it_word_path(it_word), method: :delete, class: "fas fa-ban" %>
           </td>
         <% else %>
           <!--ブックマーク-->

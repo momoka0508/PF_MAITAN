@@ -16,8 +16,8 @@
           <td><%= link_to danger.it_word.user.name, user_path(danger.it_word.user) %></td>
           <td><%= danger.it_word.word %></td>
           <td><%= danger.it_word.body %></td>
-          <td><%= link_to "編集する", edit_it_word_path(danger.it_word) %></td>
-          <td><%= link_to "削除する", it_word_path(danger.it_word), method: :delete %></td>
+          <td><%= link_to "", edit_it_word_path(danger.it_word), class: "fas fa-cog" %></td>
+          <td><%= link_to "", it_word_path(danger.it_word), method: :delete, class: "fas fa-ban" %></td>
         </tr>
       <% end %>
     </tbody>

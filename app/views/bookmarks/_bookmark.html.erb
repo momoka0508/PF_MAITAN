@@ -1,5 +1,5 @@
 <% if it_word.bookmarked_by?(current_user) %>
   <%= link_to "♥", it_word_bookmark_path(it_word, it_word.bookmarks), method: :delete, remote: true %>
 <% else %>
-<%= link_to "♡", it_word_bookmarks_path(it_word), method: :post, remote: true %>
+  <%= link_to "♡", it_word_bookmarks_path(it_word), method: :post, remote: true %>
 <% end %>
