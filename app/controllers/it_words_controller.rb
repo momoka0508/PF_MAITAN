@@ -104,7 +104,7 @@ class ItWordsController < ApplicationController
   end
 
   def index
-    @it_words = ItWord.all
+    @it_words = ItWord.all.page(params[:page]).reverse_order
   end
 
 private
