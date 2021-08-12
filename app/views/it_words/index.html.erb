@@ -13,7 +13,11 @@
   <button type = "button" class = "btn btn-outline-secondary btn-lg">
     <%= link_to "先進技術系IT用語", category_path(category: "先進技術系") %>
   </button>
-  
+
   <!--it_word一覧の部分テンプレート-->
   <%= render "it_words/it-words-index", it_words: @it_words %>
+  <!--ページネーション-->
+  <div class = "kaminari mx-auto">
+    <%= paginate @it_words %>
+  </div>
 </div>
