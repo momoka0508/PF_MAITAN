@@ -104,7 +104,8 @@ class ItWordsController < ApplicationController
   end
 
   def index
-    @it_words = ItWord.all.page(params[:page]).reverse_order
+    # 降順表示、ページネーション
+    @it_words = ItWord.order("id ASC").page(params[:page]).reverse_order
   end
 
 private

@@ -8,8 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <!--降順表示の為、"reverse_each"使用-->
-    <% it_words.reverse_each do |it_word| %>
+    <% it_words.each do |it_word| %>
       <tr>
         <td><%= it_word.word %></td>
         <td><%= it_word.body %></td>
