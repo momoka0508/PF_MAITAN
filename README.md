@@ -23,7 +23,7 @@ IT用語学習ツール
 <details>
 <summary>クリックして下さい</summary>
 
-![UIフロー](https://github.com/momoka0508/PF_MAITAN/files/7004043/ui_flows_ec_MAITAN.pdf)
+![ui_flows_ec_MAITAN-1 2](https://user-images.githubusercontent.com/82991184/129826686-e5ac0ca8-d20c-4d02-a148-953139072f74.jpg)
 
 </details>
 
