@@ -55,7 +55,7 @@ IT用語学習ツール
 <details>
   <summary>クリックして下さい</summary>
 
-  ![アプリケーション詳細設計_MAITAN xlsx - ルーティング-1](https://user-images.githubusercontent.com/82991184/129828242-4700e14a-73d6-4052-a40f-501d8af7295a.jpg)
+  ![アプリケーション詳細設計_MAITAN xlsx - ルーティング-1](https://user-images.githubusercontent.com/82991184/129828807-d04075f9-0e11-4666-a036-e3e01de4f995.jpg)
   
 </details>
 
