@@ -20,7 +20,13 @@ IT用語学習ツール
 
 ## 設計書
 - UIフロー（customer）</br>
-https://drive.google.com/file/d/1FhPDrIlLngnxN9xzKlDzwEYgHWmmJoDp/view?usp=sharing
+<details>
+<summary>クリックして下さい</summary>
+
+!(https://github.com/momoka0508/PF_MAITAN/files/7004043/ui_flows_ec_MAITAN.pdf)
+
+</details>
+
 - UIフロー（admin）</br>
 https://drive.google.com/file/d/1O9x2O0mOOWbu124YjlPHywYvtwhKUnhg/view?usp=sharing
 - ER図</br>
