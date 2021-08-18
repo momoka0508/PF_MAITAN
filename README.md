@@ -24,7 +24,7 @@ IT用語学習ツール
   <summary>クリックして下さい</summary>
 
   ![ui_flows_ec_MAITAN-1 2](https://user-images.githubusercontent.com/82991184/129826876-0b282bee-3cf4-4187-9ca4-7671f22e9556.jpg)
-  
+
 </details>
 
 - UIフロー（admin）</br>
@@ -32,7 +32,7 @@ IT用語学習ツール
   <summary>クリックして下さい</summary>
 
   ![ui_flows_admin_MAITAN](https://user-images.githubusercontent.com/82991184/129827263-1009903a-ca28-4fe0-8cf8-f13d72b6f60e.jpg)
-  
+
 </details>
 
 - ER図</br>
@@ -40,15 +40,15 @@ IT用語学習ツール
   <summary>クリックして下さい</summary>
 
   ![ER_MAITAN](https://user-images.githubusercontent.com/82991184/129827543-f0a2a366-f9a0-485d-a653-aef77c1b27b2.jpg)
-  
+
 </details>
 
 - テーブル定義書</br>
 <details>
   <summary>クリックして下さい</summary>
 
-  ![テーブル定義書_MAITAN xlsx - テーブル定義-1](https://user-images.githubusercontent.com/82991184/129828046-53da8a94-55f0-4345-9a94-353f571db56e.jpg)
-  
+  ![テーブル定義書_MAITAN xlsx - テーブル定義-1](https://user-images.githubusercontent.com/82991184/129828971-3755e62e-8816-43bc-b9d2-76c22a648db2.jpg)
+
 </details>
 
 - アプリケーション詳細設計</br>
@@ -56,7 +56,7 @@ IT用語学習ツール
   <summary>クリックして下さい</summary>
 
   ![アプリケーション詳細設計_MAITAN xlsx - ルーティング-1](https://user-images.githubusercontent.com/82991184/129828807-d04075f9-0e11-4666-a036-e3e01de4f995.jpg)
-  
+
 </details>
 
 ## チャレンジ要素一覧
