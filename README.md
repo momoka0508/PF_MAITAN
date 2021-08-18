@@ -23,7 +23,7 @@ IT用語学習ツール
 <details>
 <summary>クリックして下さい</summary>
 
-![ui_flows_ec_MAITAN-1 2](https://user-images.githubusercontent.com/82991184/129826686-e5ac0ca8-d20c-4d02-a148-953139072f74.jpg)
+![ui_flows_ec_MAITAN-1 2](https://user-images.githubusercontent.com/82991184/129826876-0b282bee-3cf4-4187-9ca4-7671f22e9556.jpg)
 
 </details>
 
