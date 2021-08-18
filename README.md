@@ -22,31 +22,41 @@ IT用語学習ツール
 - UIフロー（user）</br>
 <details>
   <summary>クリックして下さい</summary>
+
   ![ui_flows_ec_MAITAN-1 2](https://user-images.githubusercontent.com/82991184/129826876-0b282bee-3cf4-4187-9ca4-7671f22e9556.jpg)
+  
 </details>
 
 - UIフロー（admin）</br>
 <details>
   <summary>クリックして下さい</summary>
+
   ![ui_flows_admin_MAITAN](https://user-images.githubusercontent.com/82991184/129827263-1009903a-ca28-4fe0-8cf8-f13d72b6f60e.jpg)
+  
 </details>
 
 - ER図</br>
 <details>
   <summary>クリックして下さい</summary>
+
   ![ER_MAITAN](https://user-images.githubusercontent.com/82991184/129827543-f0a2a366-f9a0-485d-a653-aef77c1b27b2.jpg)
+  
 </details>
 
 - テーブル定義書</br>
 <details>
   <summary>クリックして下さい</summary>
+
   ![テーブル定義書_MAITAN xlsx - テーブル定義-1](https://user-images.githubusercontent.com/82991184/129828046-53da8a94-55f0-4345-9a94-353f571db56e.jpg)
+  
 </details>
 
 - アプリケーション詳細設計</br>
 <details>
   <summary>クリックして下さい</summary>
+
   ![アプリケーション詳細設計_MAITAN xlsx - ルーティング-1](https://user-images.githubusercontent.com/82991184/129828242-4700e14a-73d6-4052-a40f-501d8af7295a.jpg)
+  
 </details>
 
 ## チャレンジ要素一覧
