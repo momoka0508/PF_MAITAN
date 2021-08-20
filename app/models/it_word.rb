@@ -15,7 +15,6 @@ class ItWord < ApplicationRecord
 
   # searchの定義
   def self.search(search)
-    ItWord.where(["word LIKE ?", "%#{search}%"])
+    ItWord.where(['word LIKE ?', "%#{search}%"])
   end
-
 end

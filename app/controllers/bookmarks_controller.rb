@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-
   def create
     # js.erbファイルへ渡す必要があるからインスタンス変数
     @it_word = ItWord.find(params[:it_word_id])
@@ -17,5 +16,4 @@ class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.where(user_id: current_user.id)
   end
-
 end

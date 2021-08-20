@@ -70,7 +70,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 
-gem 'kaminari','~> 1.2.1'
+gem 'kaminari', '~> 1.2.1'
 
 gem 'dotenv-rails'
 group :production do

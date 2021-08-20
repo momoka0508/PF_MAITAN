@@ -4,14 +4,12 @@ class StudyCountsController < ApplicationController
     study_count.is_study = true
     study_count.save
 
+    @it_word = ItWord.find(params[:id])
     if params[:category].nil?
-      @it_word = ItWord.find(params[:id])
-      render template: "it_words/show"
+      render template: 'it_words/show'
     else
-      @it_word = ItWord.find(params[:id])
       @category = Category.find_by(category: params[:category])
-      render template: "it_words/category_show"
+      render template: 'it_words/category_show'
     end
   end
-
 end

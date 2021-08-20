@@ -1,5 +1,4 @@
 class ItWordsController < ApplicationController
-
   def new
     @it_word = ItWord.new
     @categories = Category.all
@@ -12,7 +11,7 @@ class ItWordsController < ApplicationController
       redirect_to it_words_path
     else
       @categories = Category.all
-      render "new"
+      render 'new'
     end
   end
 
@@ -28,7 +27,7 @@ class ItWordsController < ApplicationController
       redirect_to it_words_path
     else
       @categories = Category.all
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -41,48 +40,45 @@ class ItWordsController < ApplicationController
   # カテゴリー無しver
   def quiz
     # キャッシュ定義
-    quiz = Rails.cache.read("quiz") || '[]'
-    quiz = JSON.parse(quiz)
+    begin_quiz = Rails.cache.read('it_words') || '[]'
+    # JSON記法に変換
+    # quiz = JSON.parse(begin_quiz)
     if quiz.blank?
       # ランダムにレコード取得
-      random = ItWord.order("RAND()")
-      # ・"quiz"に定義・"to_json"にて文字列として保存
-      Rails.cache.write("quiz", random.to_json)
-      word = Rails.cache.read("quiz")
-    else
-      word = Rails.cache.read("quiz")
+      random_itwords = ItWord.order('RANDOM()')
+      # ●'it_words'にレコードを定義●"to_json"にて文字列として保存
+      Rails.cache.write('it_words', random_itwords.to_json)
     end
+    finish_quiz = Rails.cache.read('it_words')
     # 再び配列へ
     # wordを置き換えてるので下記変数名である必要がある
-    word = JSON.parse word
-    @random = word.first
-    word.delete_if {|w| w['id'] == @random['id'] }
-    Rails.cache.write("quiz", word.to_json)
+    finish_quiz = JSON.parse finish_quiz
+    @random = finish_quiz.first
+    finish_quiz.delete_if { |w| w['id'] == @random['id'] }
+    Rails.cache.write('it_words', finish_quiz.to_json)
   end
 
   # カテゴリー有りver
   def category_quiz
     @category = Category.find_by(category: params[:category])
-    quiz = Rails.cache.read("quiz") || '[]'
+    quiz = Rails.cache.read('quiz') || '[]'
     quiz = JSON.parse(quiz)
     # キャッシュ定義
     if quiz.blank?
       # ランダムにレコード取得
-      random = @category.it_words.order("RAND()")
+      random = @category.it_words.order('RAND()')
       # ・"quiz"に定義・"to_json"にて文字列として保存
-      Rails.cache.write("quiz", random.to_json)
-      word = Rails.cache.read("quiz")
-    else
-      word = Rails.cache.read("quiz")
+      Rails.cache.write('quiz', random.to_json)
     end
+    word = Rails.cache.read('quiz')
     # 再び配列へ
     # wordを置き換えてるので下記変数名である必要がある
     word = JSON.parse word
     @random = word.first
     # 一度出たit_wordは削除する
-    word.delete_if {|w| w['id'] == @random['id'] }
+    word.delete_if { |w| w['id'] == @random['id'] }
     # ・"quiz"に定義・"to_json"にて文字列として保存
-    Rails.cache.write("quiz", word.to_json)
+    Rails.cache.write('quiz', word.to_json)
   end
 
   # カテゴリー無しver
@@ -105,13 +101,12 @@ class ItWordsController < ApplicationController
 
   def index
     # 降順表示、ページネーション
-    @it_words = ItWord.order("id ASC").page(params[:page]).reverse_order
+    @it_words = ItWord.order('id ASC').page(params[:page]).reverse_order
   end
 
-private
+  private
 
-def it_word_params
-  params.require(:it_word).permit(:user_id, :word, :body, :category_id)
-end
-
+  def it_word_params
+    params.require(:it_word).permit(:user_id, :word, :body, :category_id)
+  end
 end
