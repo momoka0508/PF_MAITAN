@@ -1,1 +1,7 @@
 inherit_from: .rubocop_todo.yml
+
+##################### Metrics ##################################
+
+# キャッシュ機能、下記限界値
+Metrics/AbcSize:
+  Max: 24
