@@ -37,25 +37,23 @@ class ItWordsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  # カテゴリー無しver
   def quiz
-    # キャッシュ定義
-    quiz = Rails.cache.read("quiz") || '[]'
+    quiz = Rails.cache.read('quiz') || '[]'
     quiz = JSON.parse(quiz)
     if quiz.blank?
       # ランダムにレコード取得
-      random = ItWord.order("RAND()")
-      # ・"quiz"に定義・"to_json"にて文字列として保存
-      Rails.cache.write("quiz", random.to_json)
-      word = Rails.cache.read("quiz")
-    else
-      word = Rails.cache.read("quiz")
+      random = ItWord.order('RAND()')
+      # ●"quiz"に定義●"to_json"にて文字列として保存
+      Rails.cache.write('quiz', random.to_json)
     end
+    word = Rails.cache.read('quiz')
     # 再び配列へ
     # wordを置き換えてるので下記変数名である必要がある
     word = JSON.parse word
     @random = word.first
-    word.delete_if {|w| w['id'] == @random['id'] }
-    Rails.cache.write("quiz", word.to_json)
+    word.delete_if { |w| w['id'] == @random['id'] }
+    Rails.cache.write('quiz', word.to_json)
   end
 
   # カテゴリー有りver
