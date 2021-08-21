@@ -2,6 +2,22 @@ inherit_from: .rubocop_todo.yml
 
 ##################### Metrics ##################################
 
-# キャッシュ機能、下記限界値
+# 自動生成ファイルを除く
+AllCops:
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - vendor/**/*
+    - db/migrate/*
+
+# 日本語コメント許可
+Style/AsciiComments:
+  Enabled: false
+
+# it_word/quizアクション
 Metrics/AbcSize:
   Max: 24
+
+# it_word/quizアクション
+Metrics/MethodLength:
+  Max: 23
