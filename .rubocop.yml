@@ -1,5 +1,3 @@
-inherit_from: .rubocop_todo.yml
-
 ##################### Metrics ##################################
 
 # 自動生成ファイルを除く
@@ -13,6 +11,16 @@ AllCops:
 # 日本語コメント許可
 Style/AsciiComments:
   Enabled: false
+
+# ドキュメントの無い public class を許可する
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 160
 
 # it_word/quizアクション
 Metrics/AbcSize:
