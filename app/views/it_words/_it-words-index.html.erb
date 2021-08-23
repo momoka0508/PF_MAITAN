@@ -17,14 +17,14 @@
             <%= link_to "", edit_it_word_path(it_word), class: "fas fa-cog" %>
           </td>
           <td>
-            <%= link_to "", it_word_path(it_word), method: :delete, class: "fas fa-ban" %>
+            <%= link_to "", it_word_path(it_word), method: :delete, "data-confirm" => "本当に削除しますか？", class: "fas fa-ban" %>
           </td>
         <% elsif current_user == it_word.user %>
           <td>
             <%= link_to "", edit_it_word_path(it_word), class: "fas fa-cog" %>
           </td>
           <td>
-            <%= link_to "", it_word_path(it_word), method: :delete, class: "fas fa-ban" %>
+            <%= link_to "", it_word_path(it_word), method: :delete, "data-confirm" => "本当に削除しますか？", class: "fas fa-ban" %>
           </td>
         <% else %>
           <!--ブックマーク-->

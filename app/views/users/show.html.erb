@@ -15,10 +15,10 @@
         <td><%= @user.name %></td>
         <td><%= @user.email %></td>
         <% if current_user.is_admin? %>
-          <td><%= link_to "強制退会する", user_path(@user), method: :delete %></td>
+          <td><%= link_to "強制退会する", user_path(@user), "data-confirm" => "本当に強制退会させますか？",method: :delete %></td>
         <% elsif current_user = @user %>
           <td><%= link_to "編集する", edit_user_path(@user) %></td>
-          <td><%= link_to "退会する", user_path(@user), method: :delete %></td>
+          <td><%= link_to "退会する", user_path(@user), "data-confirm" => "本当に退会しますか？", method: :delete %></td>
         <% end %>
       </tr>
     </tbody>
