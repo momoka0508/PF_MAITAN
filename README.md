@@ -34,7 +34,7 @@ IT用語学習ツール
 <details>
   <summary>クリックして下さい</summary>
 
-  ![ui_flows_admin_MAITAN](https://user-images.githubusercontent.com/82991184/129827263-1009903a-ca28-4fe0-8cf8-f13d72b6f60e.jpg)
+  ![ui_flows_admin_MAITAN](https://user-images.githubusercontent.com/82991184/130547529-3800ba6b-33b4-48b7-af96-e29ac6121c97.jpg)
 
 </details>
 
