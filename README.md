@@ -63,7 +63,10 @@ IT用語学習ツール
 </details>
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1GjMulo1iab1MpxH2551Z4sC5q0FF4iNsvDAxKa3fgxk/edit?usp=sharing
+![チャレンジ要素一覧(クラウド教養コース) のコピー - 雛形-1](https://user-images.githubusercontent.com/82991184/130548215-97ca6fa4-9f72-432c-9ec9-4d3e5095f135.jpg)
+
+## インフラ構成図
+![AWS構成図](https://user-images.githubusercontent.com/82991184/130548757-72b587e8-6711-484e-9837-bb8e38370f99.jpg)
 
 ## 開発環境
 - OS：Linux(CentOS)
