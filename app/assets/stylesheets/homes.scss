@@ -2,6 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// topページのグレー背景
 .person {
   background-color: #dcdcdc;
+  width: 600px;
+  height: 150px;
+  margin: 10px;
+}
+
+// レスポンシブ_topページのグレー背景/タブレット
+@media screen and (max-width:768px){
+  .person {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+// レスポンシブ_topページのグレー背景/スマホ
+@media screen and (max-width:425px){
+  .person {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+  }
 }

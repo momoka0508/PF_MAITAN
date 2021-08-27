@@ -21,14 +21,14 @@
   box-sizing: border-box;
 }
 
-// バック背景色
+// バック背景色(オレンジ)
 body{
   background-color: #FFA500;
   width: 100%;
   height: 100%;
 }
 
-// 中央白枠（topページ・ログイン・新規登録画面にて）
+// 中央白枠（topページ・ログイン・新規登録画面）
 .guidance {
   width: 800px;
   height: 500px;
@@ -38,16 +38,39 @@ body{
   text-align: center;
 }
 
+// レスポンシブ_中央白枠（topページ・ログイン・新規登録画面）/タブレット
+@media screen and (max-width:768px){
+  .guidance {
+    width: 500px;
+    height: 500px;
+    padding: 25px;
+    margin: 50px;
+    font-size: 10px;
+  }
+}
+
+// レスポンシブ_中央白枠（topページ・ログイン・新規登録画面）/スマホ
+@media screen and (max-width:425px){
+  .guidance {
+    width: 300px;
+    height: 500px;
+    padding: 25px;
+    margin: 50px;
+    font-size: 10px;
+  }
+}
+
 li {
    list-style: none;
 }
 
-// mainレイアウト
+// 中央白枠全て
 main{
   height: 400px;
   text-align: center;
 }
 
+// top以外の白枠全て
 .container{
   background-color: white;
 }
