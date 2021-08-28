@@ -1,5 +1,5 @@
 <% if it_word.dangered_by?(current_user) %>
   <%= link_to "通報を取り消す", it_word_danger_path(it_word, it_word.dangers), method: :delete, remote: true %>
 <% else %>
-  <%= link_to "通報する", it_word_dangers_path(it_word), method: :post, remote: true %>
+  <%= link_to "通報する", it_word_dangers_path(it_word), method: :post, "data-confirm" => "本当に通報しますか？", remote: true %>
 <% end %>

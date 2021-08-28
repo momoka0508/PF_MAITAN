@@ -3,6 +3,7 @@
   <table class="table table-hover table-inverse">
     <thead>
       <tr>
+        <th>通報者</th>
         <th>投稿者</th>
         <th>IT用語</th>
         <th>意味</th>
@@ -13,11 +14,24 @@
     <tbody>
       <% @dangers.each do |danger| %>
         <tr>
-          <td><%= link_to danger.it_word.user.name, user_path(danger.it_word.user) %></td>
-          <td><%= danger.it_word.word %></td>
-          <td><%= danger.it_word.body %></td>
-          <td><%= link_to "", edit_it_word_path(danger.it_word), class: "fas fa-cog" %></td>
-          <td><%= link_to "", it_word_path(danger.it_word), method: :delete, "data-confirm" => "本当に削除しますか？", class: "fas fa-ban" %></td>
+          <td>
+            <%= link_to danger.user.name, user_path(danger.user) %>
+          </td>
+          <td>
+            <%= link_to danger.it_word.user.name, user_path(danger.it_word.user) %>
+          </td>
+          <td>
+            <%= danger.it_word.word %>
+          </td>
+          <td>
+            <%= danger.it_word.body %>
+          </td>
+          <td>
+            <%= link_to "", edit_it_word_path(danger.it_word), class: "fas fa-cog" %>
+          </td>
+          <td>
+            <%= link_to "", it_word_path(danger.it_word), method: :delete, "data-confirm" => "本当に削除しますか？", class: "fas fa-ban" %>
+          </td>
         </tr>
       <% end %>
     </tbody>
