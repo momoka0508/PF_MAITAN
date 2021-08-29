@@ -74,3 +74,17 @@ main{
 .container{
   background-color: white;
 }
+
+//ページネーション自体のデザイン
+.pagination {
+  border: none;
+  color: #696969;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+}
+
+// 表示しているページ番号のデザイン
+.pagination>.active {
+  background: #93c9ff;
+  border-radius: 15px;
+}
