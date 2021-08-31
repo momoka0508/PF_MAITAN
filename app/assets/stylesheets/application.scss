@@ -64,18 +64,42 @@ li {
    list-style: none;
 }
 
-// 中央白枠全て
+// it_word/top以外の中央白枠全て
 main{
+  width: 1000px;
   height: 400px;
   text-align: center;
-}
-
-// top以外の白枠全て
-.container{
   background-color: white;
 }
 
-//ページネーション自体のデザイン
+// レスポンシブ_it_word/top以外の中央白枠全て/タブレット
+@media screen and (max-width:768px){
+  main{
+    width: 700px;
+  }
+}
+
+// レスポンシブ_it_word/top以外の中央白枠全て/スマホ
+@media screen and (max-width:425px){
+  main{
+    width: 300px;
+  }
+}
+
+// ヘッダーサイズ
+.container{
+  background-color: white;
+  width: 1000px;
+}
+
+// top以外の白枠/スマホ
+@media screen and (max-width:425px){
+  .container{
+    width: 300px;
+  }
+}
+
+//ページネーションのデザイン
 .pagination {
   border: none;
   color: #696969;

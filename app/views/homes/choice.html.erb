@@ -1,53 +1,51 @@
-<div class = "container">
-  <main class = "mx-auto mt-5 py-5">
-    <% if current_user.is_admin? %>
+<main class = "mx-auto mt-5 py-5">
+  <% if current_user.is_admin? %>
 
-      <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
-        <%= link_to "通報を確認する", dangers_path %>
-      </button>
+    <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+      <%= link_to "通報を確認する", dangers_path %>
+    </button>
 
-      <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
-        <%= link_to "会員一覧", users_path %>
-      </button>
+    <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+      <%= link_to "会員一覧", users_path %>
+    </button>
 
-      <div class = "search mb-5">
-        <h4>検索する</h4>
-        <%= form_with url: "/search", method: :get, local: true do |f| %>
-          <%= f.text_field :search %>
-          <%= f.submit "検索" %>
-        <% end %>
-      </div>
-
-      <h4>新着IT用語</h4>
-      <!--新着用語５件表示-->
-      <% @it_words.last(5).each do |it_word| %>
-        ★<%= it_word.word %>
+    <div class = "search mb-5">
+      <h4>検索する</h4>
+      <%= form_with url: "/search", method: :get, local: true do |f| %>
+        <%= f.text_field :search %>
+        <%= f.submit "検索" %>
       <% end %>
+    </div>
 
-    <% else %>
-
-      <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
-        <%= link_to "学習モード", start_it_words_path %>
-      </button>
-
-      <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
-        <%= link_to "復習モード", bookmarks_user_path(current_user) %>
-      </button>
-
-      <div class = "search mb-5">
-        <h4>検索モード</h4>
-        <%= form_with url: "/search", method: :get, local: true do |f| %>
-          <%= f.text_field :search %>
-          <%= f.submit "検索" %>
-        <% end %>
-      </div>
-
-      <h4>新着IT用語</h4>
-      <!--新着用語５件表示-->
-      <% @it_words.last(5).each do |it_word| %>
-        ★<%= it_word.word %>
-      <% end %>
-
+    <h4>新着IT用語</h4>
+    <!--新着用語５件表示-->
+    <% @it_words.last(5).each do |it_word| %>
+      ★<%= it_word.word %>
     <% end %>
-  </main>
-</div>
+
+  <% else %>
+
+    <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+      <%= link_to "学習モード", start_it_words_path %>
+    </button>
+
+    <button type = "button" class = "btn btn-outline-secondary btn-lg mb-5">
+      <%= link_to "復習モード", bookmarks_user_path(current_user) %>
+    </button>
+
+    <div class = "search mb-5">
+      <h4>検索モード</h4>
+      <%= form_with url: "/search", method: :get, local: true do |f| %>
+        <%= f.text_field :search %>
+        <%= f.submit "検索" %>
+      <% end %>
+    </div>
+
+    <h4>新着IT用語</h4>
+    <!--新着用語５件表示-->
+    <% @it_words.last(5).each do |it_word| %>
+      ★<%= it_word.word %>
+    <% end %>
+
+  <% end %>
+</main>
