@@ -64,7 +64,7 @@ li {
    list-style: none;
 }
 
-// it_word/top以外の中央白枠全て
+// user,choiceページ、中央白枠
 main{
   width: 1000px;
   height: 400px;
@@ -72,27 +72,27 @@ main{
   background-color: white;
 }
 
-// レスポンシブ_it_word/top以外の中央白枠全て/タブレット
+// レスポンシブ_user,choiceページ、中央白枠/タブレット
 @media screen and (max-width:768px){
   main{
     width: 700px;
   }
 }
 
-// レスポンシブ_it_word/top以外の中央白枠全て/スマホ
+// レスポンシブ_user,choiceページ、中央白枠/スマホ
 @media screen and (max-width:425px){
   main{
     width: 300px;
   }
 }
 
-// ヘッダーサイズ
+// ヘッダーサイズ（仮）
 .container{
   background-color: white;
   width: 1000px;
 }
 
-// top以外の白枠/スマホ
+// レスポンシブ_ヘッダーサイズ（仮）/スマホ
 @media screen and (max-width:425px){
   .container{
     width: 300px;
