@@ -26,7 +26,7 @@ IT用語学習ツール
 <details>
   <summary>クリックして下さい</summary>
 
-  ![ui_flows_ec_MAITAN-1 2](https://user-images.githubusercontent.com/82991184/129826876-0b282bee-3cf4-4187-9ca4-7671f22e9556.jpg)
+  ![ui_flows_ec_MAITAN.pdf](https://github.com/momoka0508/PF_MAITAN/files/7099207/ui_flows_ec_MAITAN.pdf)
 
 </details>
 
@@ -42,7 +42,7 @@ IT用語学習ツール
 <details>
   <summary>クリックして下さい</summary>
 
-  ![ER_MAITAN](https://user-images.githubusercontent.com/82991184/129827543-f0a2a366-f9a0-485d-a653-aef77c1b27b2.jpg)
+  ![ER_MAITAN.drawio.pdf](https://github.com/momoka0508/PF_MAITAN/files/7099272/ER_MAITAN.drawio.pdf)
 
 </details>
 
